@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: 'Poppins',sans-serif;
+                box-sizing: border-box;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                background: peachpuff;
+                color: black;
+            }
+            #header {
+                width: 100%;
+                height: 100vh;
+            }
+            .container {
+                padding: 10px 10%;
+            } 
+            nav {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            nav ul li {
+            display: inline-block;
+             list-style: none;
+            margin: 10px 20px;
+           }
+         nav h1 {
+         font-size: 50px;
+            letter-spacing: 2px;
+          padding: 10px 20px;
+          color: brown;
+         }
+         nav h1 span {
+           color: black;
+          }
+         nav h1 span {
+            color: black;
+            }
+            nav ul li a {
+          color: black;
+          text-decoration: none;
+         font-size: 20px;
+          position: relative;
+          font-weight: 900;
+           }
+           nav ul li a::after {
+           content: '';
+         width: 0;
+          height: 3px;
+        background: brown; 
+         position: absolute;
+         left: 0;
+           bottom: -2px; 
+          transition: width 0.5s; 
+          }
+          nav ul li a:hover::after {
+         width: 100%; 
+         }
+
+         nav ul li a:active::after {
+            width: 100%; 
+           }
+           .header-text {
+          margin-top: 20%;
+           font-size: 30px;
+       }
+            .header-text p {
+           font-size: 28px;
+           color: black;
+         }
+        .header-text h1 {
+       font-size: 80px;
+        margin-top: 20px;
+       }
+         .header-text h1 span {
+         color: brown;
+         
+         }
+         
+         #about {
+            padding: 80px 0;
+         }
+         .row {
+            justify-content: space-between;
+            flex-wrap: wrap;
+         }
+         .about-col-1 {
+            flex-basis: 60%;
+         }
+         .sub-title {
+            font-size: 40px;
+            font-weight: 600;
+            color: black;
+         }
+         .container p {
+       color: black;
+       padding: 6px;
+       letter-spacing: 1px;
+       font-weight: 600;
+         }
+         .tab-titles {
+            display: flex;
+            margin: 20px 0 40px;
+         }
+         .tab-links {
+            margin-right: 50px;
+            font-size: 18px;
+            font-weight: 18px;
+            cursor: pointer;
+            position: relative;
+         }
+         #skills{
+            margin-top: -40px;
+         }
+         .tab-links::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: black;
+            position: absolute;
+            left: 9%;
+            bottom: -8px;
+            transition: 0.5s;
+         }
+         .tab-links.active-link::after {
+            width: 50%;
+         }
+         .tab-contents ul li {
+            list-style: none;
+            margin: 10px 0;
+            font-size: 14px;
+            color: black;
+            padding: 5px;
+        }
+        .tab-contents ul li span {
+            color: brown;
+            font-size: 14px;
+        }
+        .tab-contents {
+            display: none;
+        }
+        .tab-contents.active-tab {
+            display: block;
+        }
+       /* -----------------skills------------ */
+       #skills {
+        padding: 30px 0;
+       }
+       .skills-list {
+        display: flex;
+        justify-content: space-between;
+       }
+       .skills-list {
+        margin-right: 10px;
+       }
+       .skills-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        margin-top: 50px;
+       }
+       .skills-list div {
+        background: pink;
+        padding: 30px;
+        font-size: 13px;
+        font-weight: 300;
+        border-radius: 10px;
+        width: 80%;
+        transform-box:  0.5s, transform 0.5s;
+         }
+         .skills-list div i {
+            font-size: 50px;
+            margin-bottom: 30px;
+         }
+         .skills-list div h2 {
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 15px;
+         }
+         .skills-list div p {
+            color: black;
+            letter-spacing: normal;
+         }
+         .skills-list div a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            margin-top: 2opx; 
+            display: inline-block;
+         }
+         .skills-list div:hover {
+            background: gray ;
+            transform: translateY(-10px);
+         }
+         /* ----------contact---------- */
+         .contact-left {
+            flex-basis: 35%;
+         }
+         .sub-title {
+            padding: 4px;
+            margin-top: 50px;
+         }
+         .contact-right{
+            flex-basis: 60%;
+            float: right;
+            width: 50%;
+            margin-top: -180px;
+         }
+        .contact-left p {
+           margin-top: 30px;
+        }
+        .contact-left p i {
+            color: lightcoral;
+            margin-right: 15px;
+            font-size: 25px;
+        }
+       .social-icons {
+        margin-top: 30px;
+       }
+       .social-icons a {
+        text-decoration: none;
+        font-size: 30px;
+        margin-right: 15px;
+        color: black;
+        display: inline-block;
+        transition: transform(0.5s);
+       }
+       .social-icons a:hover {
+        color: grey;
+        transform: translateY(-5px);
+       }
+       #contact p {
+       padding: 10px;
+       }
+       .btn {
+        margin-top: 20px;
+        display: inline-block;
+        padding: 10px 20px;
+        background: pink;
+        color: black;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background-color(0.3s);
+        
+       }
+       .btn:hover {
+        background-color: red;
+       }
+        .contact-right form .btn2 {
+            margin-left: 15px;
+            color:black;
+        }
+      form input,form textarea{
+        width: 100%;
+        border: 0;
+        outline: none;
+        background: lightcoral;
+        padding: 15px;
+        margin: 15px;
+        color: rgb(16, 4, 18);
+        font-size: 18px;
+        border-radius: 6px;
+        margin-top: 5px;
+      }
+      form.btn2 {
+        padding: 20px 60px;
+        font-size: 18px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+      .Copyrights {
+        text-align: center;
+      }
+      .Copyrights+p+h5 {
+        width: 100%;
+        display: flex;
+       text-align: center;
+       display: inline-block;
+       margin-top: 22px;
+       padding: 16px ;
+       margin-left: -30px;
+       color: rgb(13, 12, 12);
+       font-weight: 900;
+      }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <h1><span>MITHILA</span> NAGAM<span></span></h1> 
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills-2">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                </nav>
+                <div class="header-text">
+                    <p>Fresher</p>
+                    <h1>Hello,I am <span>MITHILA</span><br>From Hyderabad</h1>
+                </div>
+            </div>
+        </div>
+    <!-- -------------about----------- -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                  <div class="about-col-1"></div>
+                  <h1 class="sub-title">About Me</h1>
+                   <p>I am 3rd year Computer Science Engineering Student at Nalla Malla Reddy Engineering
+                    College. My Highest qualification is intermidate.Now I am currently pursing B tech 3rd year.</p>
+                     <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('interests')">Interests</p>
+                        <p class="tab-links" onclick="opentab(' skills')">Skills</p>
+                     </div>
+                     <div class="tab-contents active-tab" id="education">
+                        <ul>
+                            <li><span>2019</span><br>SSC education at Sacred Heart High School,Athmakur</li>
+                            <li><span>2021</span><br>Intermedate at Narayana junior college,Hyderabad</li>
+                            <li><span>2025</span><br>Btech at Nalla Malla Reddy Engineering coolege,Hyderabad</li>
+                        </ul>
+                     </div>
+                     <div class="tab-contents" id="interests">
+                        <ul>
+                            <li><span>Web development</span><br>Passionate about web pages using HTML and css. </li>
+                            <li><span>programming</span><br>Fascinated by programming languages like c,java,python.</li>
+                            <li><span>Full Stack development</span><br>Enthusiastic about learning a front-end technologies such as html,css,javascript and back-end technologies are React js,angular and bootstrap. i am eager to apply these skills to real time applications and projects as a developer.</li>
+                        </ul>
+                     </div>
+                     <div class="tab-contents" id="skills">
+                        <ul>
+                            <li><span>programming</span><br></li>
+                            <li><span>techinical skills</span><br>
+                                •	Programming languages: C,python,JAVA,
+                                •	Scripting Languages: HTML, CSS, JavaScript. 
+                                •	Database Management System: MySql. 
+                                </li>
+                        </ul>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <!-- ------------skills---------- -->
+        <div id="skills-2">
+            <div class="container">
+                <h1 class="sub-title">My Skills</h1>
+               <div class="skills-list">
+                <div>
+                    <i class="fas fa-code icon"></i>
+                    <h2>Basic Website Development</h2>
+                    <p>HTML skills to create simple websites for small. businesses or personal portfolios.</p>
+                    <a href="#">Read more</a>
+                </div>
+                <div>
+                    <i class="fab fa-python icon"></i>
+                    <h2>C,java,python,data science</h2>
+                    <p> programming languages C,java,datascience</p>
+                    <a href="#">Read more</a>
+                </div>
+                <div>
+                    <i class="fas fa-code icon"></i>
+                    <h2>Web Development</h2>
+                    <p>front-end technologies such as html,css,javascript and back-end technologies are React js,angular and bootstrap. i am apply  to craete these skills to real time applications and projects as a developer.</li>
+                     </p>
+                    <a href="#">Read more</a>
+                    </div>
+
+               </div>
+            </div>
+
+        </div>
+        <!-- ---------------Contact---------- -->
+        <div id="contact">
+            <div class="container">
+                 <div class="contact-left"></div>
+                 <h1 class="sub-title">Contact Me</h1>
+                 <p><i class="fas fa-paper-plane"></i>@gmail.com</p>
+                 <p><i class="fas fa-mobile"></i>93xxxxxxxxxx</p>
+                 <div class="social-icons">
+                    <a href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-github"></i></a>
+                    <a href=""><i class="fab fa-linkedin"></i></a>
+                 </div>
+                 <a href="N Mithila resume-min.pdf"download class="btn btn2">Download Resume</a>
+                 <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit"class="btn btn2">Submit</button>
+                    </form>
+                 </div>
+                 </div>
+            </div>
+            <div class="Copyrights"></div>
+            <p><h5>Copyright © Nagam Mithila.All rights reserved</h5></p>
+         </div>
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            function opentab(tabname) {
+                for(tablink of tablinks) {
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents) {
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        
+        </script>
+    </body>
+</html>
